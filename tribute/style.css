@@ -1,10 +1,11 @@
 :root {
-    --bg-main: #0f172a;
-    --card-bg: #1e293b;
-    --accent-gold: #fbbf24;
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --border-color: rgba(251, 191, 36, 0.15);
+    --bg-main: #0b0f19;
+    --card-bg: #111827;
+    --accent-red: #ef4444;
+    --accent-gold: #f59e0b;
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --border-color: rgba(239, 68, 68, 0.2);
 }
 
 * {
@@ -18,7 +19,7 @@ body {
     background-color: var(--bg-main);
     color: var(--text-primary);
     line-height: 1.6;
-    padding: 1.5rem;
+    padding: 2rem 1rem;
 }
 
 #main {
@@ -27,34 +28,38 @@ body {
     background: var(--card-bg);
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Hero Branding */
+/* Hero Section Styling */
 .hero-section {
     text-align: center;
-    padding: 3.5rem 1.5rem;
-    background: linear-gradient(180deg, rgba(251, 191, 36, 0.05) 0%, rgba(0,0,0,0) 100%);
+    padding: 4.5rem 1.5rem;
+    background: linear-gradient(180deg, rgba(239, 68, 68, 0.04) 0%, rgba(0,0,0,0) 100%);
 }
 
 #title {
-    font-size: 2.75rem;
+    font-size: 3rem;
     font-weight: 800;
-    color: var(--accent-gold);
-    letter-spacing: -0.02em;
-    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    margin-bottom: 0.75rem;
 }
 
 .subtitle {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
+    font-size: 1.15rem;
+    color: var(--accent-gold);
+    max-width: 650px;
+    margin: 0 auto;
+    font-weight: 500;
 }
 
-/* Dynamic Image Showcase Wrapper */
+/* Image Showcase Block */
 #img-div {
     width: 100%;
-    background: #0b0f19;
-    padding: 1rem;
+    background: #070a12;
+    padding: 1.5rem;
     text-align: center;
 }
 
@@ -64,58 +69,60 @@ body {
     height: auto;
     border-radius: 12px;
     margin: 0 auto;
+    opacity: 0.85;
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 #img-caption {
     font-size: 0.9rem;
     color: var(--text-secondary);
-    margin-top: 0.75rem;
+    margin-top: 1rem;
     font-style: italic;
 }
 
-/* Content Container Configuration */
+/* Content Layout Containers */
 .content-container {
-    padding: 2.5rem 2rem;
+    padding: 3.5rem 2.5rem;
 }
 
 .section-title {
-    font-size: 1.75rem;
+    font-size: 1.8rem;
     text-align: center;
-    margin-bottom: 2.5rem;
-    color: var(--accent-gold);
+    margin-bottom: 3rem;
+    color: var(--text-primary);
 }
 
-/* Linear Timeline System Design */
+/* Chronological Timeline Design */
 .timeline {
     position: relative;
     border-left: 2px solid var(--border-color);
     margin: 0 auto 3rem auto;
-    max-width: 750px;
-    padding-left: 1.5rem;
+    max-width: 700px;
+    padding-left: 2rem;
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 .time-marker {
     position: absolute;
-    left: -2.35rem;
-    background: var(--accent-gold);
-    color: #0f172a;
+    left: -2.85rem;
+    background: var(--accent-red);
+    color: #ffffff;
     font-weight: 700;
     font-size: 0.75rem;
-    padding: 0.2rem 0.5rem;
+    padding: 0.25rem 0.6rem;
     border-radius: 6px;
     text-align: center;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
 }
 
 .time-content h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--text-primary);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.35rem;
 }
 
 .time-content p {
@@ -123,28 +130,33 @@ body {
     font-size: 0.95rem;
 }
 
-/* Context blockquote section styling */
+/* Quote Layout */
 .quote-box {
     border-left: 4px solid var(--accent-gold);
-    padding: 1rem 1.5rem;
-    background: rgba(251, 191, 36, 0.03);
-    margin: 2rem auto;
-    max-width: 750px;
+    padding: 1.25rem 1.75rem;
+    background: rgba(245, 158, 11, 0.02);
+    margin: 3.5rem auto;
+    max-width: 700px;
     font-style: italic;
     border-radius: 0 12px 12px 0;
 }
 
-/* Footer Section styling */
+.quote-box p {
+    font-size: 1.15rem;
+    color: #e5e7eb;
+}
+
+/* Footer link structures */
 .tribute-footer {
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 4rem;
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .tribute-footer h3 {
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 1.05rem;
+    font-weight: 400;
     color: var(--text-secondary);
 }
 
@@ -152,8 +164,8 @@ body {
     color: var(--accent-gold);
     text-decoration: none;
     font-weight: 600;
-    border-bottom: 1px dashed var(--accent-gold);
     transition: all 0.2s ease;
+    border-bottom: 1px dashed var(--accent-gold);
 }
 
 #tribute-link:hover {
@@ -161,10 +173,10 @@ body {
     border-bottom-style: solid;
 }
 
-/* Standard Mobile Adaptation Media Queries */
+/* Responsive view overrides */
 @media (max-width: 600px) {
-    #title { font-size: 2rem; }
-    .content-container { padding: 1.5rem 1rem; }
-    .timeline { padding-left: 1rem; }
+    #title { font-size: 2.25rem; }
+    .content-container { padding: 2rem 1.25rem; }
+    .timeline { padding-left: 1.25rem; }
     .time-marker { position: relative; left: 0; display: inline-block; margin-bottom: 0.5rem; }
 }
