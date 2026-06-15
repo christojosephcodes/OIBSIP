@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OIB-SIP Dynamic To-Do App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Task Tracker</h1>
+            <p class="subtitle">Oasis Infobyte Internship Project</p>
+        </header>
+
+        <section class="input-section">
+            <div class="input-group">
+                <input type="text" id="task-input" placeholder="What needs to be done today?">
+                <button id="add-task-btn">Add Task</button>
+            </div>
+        </section>
+
+        <main class="task-dashboard">
+            <section class="task-column">
+                <h2>Pending Tasks <span id="pending-count" class="badge">0</span></h2>
+                <ul id="pending-list" class="task-list"></ul>
+            </section>
+
+            <section class="task-column">
+                <h2>Completed Tasks <span id="completed-count" class="badge">0</span></h2>
+                <ul id="completed-list" class="task-list"></ul>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
