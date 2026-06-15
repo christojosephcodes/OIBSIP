@@ -17,7 +17,7 @@
 
             <div id="status-banner" class="status-banner hidden"></div>
 
-            <form id="login-form" class="auth-form novalidate">
+            <form id="login-form" class="auth-form" novalidate>
                 <div class="input-group">
                     <label for="login-email">Email Address</label>
                     <input type="email" id="login-email" placeholder="you@example.com" autocomplete="username" required>
@@ -33,36 +33,4 @@
                 <button type="submit" class="submit-btn">Sign In to Console</button>
             </form>
 
-            <form id="register-form" class="auth-form hidden novalidate">
-                <div class="input-group">
-                    <label for="reg-name">Full Name</label>
-                    <input type="text" id="reg-name" placeholder="John Doe" autocomplete="name" required>
-                    <span class="error-msg">Name field cannot be left blank</span>
-                </div>
-
-                <div class="input-group">
-                    <label for="reg-email">Email Address</label>
-                    <input type="email" id="reg-email" placeholder="newuser@example.com" autocomplete="email" required>
-                    <span class="error-msg">Please provide a valid registration email</span>
-                </div>
-
-                <div class="input-group">
-                    <label for="reg-password">Create Password</label>
-                    <input type="password" id="reg-password" placeholder="Min. 8 characters" autocomplete="new-password" required>
-                    <span class="error-msg">Password must contain at least 8 characters</span>
-                </div>
-
-                <div class="input-group">
-                    <label for="reg-confirm">Confirm Password</label>
-                    <input type="password" id="reg-confirm" placeholder="Repeat your password" autocomplete="new-password" required>
-                    <span class="error-msg">Security mismatch: Passwords do not match</span>
-                </div>
-
-                <button type="submit" class="submit-btn register-variant">Create New Account</button>
-            </form>
-
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+            <form id="register-form"
