@@ -3,37 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Portal Login</title>
+    <title>Gateway Authentication Console</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="login-wrapper">
-        <div class="login-card">
-            <header class="card-header">
-                <h2>Welcome Back</h2>
-                <p>Enter your credentials to access your console panel</p>
-            </header>
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            
+            <div class="tab-toggle-group">
+                <button type="button" class="tab-btn active" id="toggle-login-tab">Sign In</button>
+                <button type="button" class="tab-btn" id="toggle-reg-tab">Register</button>
+            </div>
 
             <div id="status-banner" class="status-banner hidden"></div>
 
-            <form id="login-form" novalidate>
+            <form id="login-form" class="auth-form novalidate">
                 <div class="input-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" placeholder="you@example.com" autocomplete="username" required>
-                    <span class="error-msg" id="email-error">Please enter a valid email address</span>
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email" placeholder="you@example.com" autocomplete="username" required>
+                    <span class="error-msg">Please enter a valid email address</span>
                 </div>
 
                 <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="••••••••" autocomplete="current-password" required>
-                    <span class="error-msg" id="password-error">Password must be at least 8 characters long</span>
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="••••••••" autocomplete="current-password" required>
+                    <span class="error-msg">Password must be at least 8 characters long</span>
                 </div>
 
-                <button type="submit" id="submit-btn" class="submit-btn">
-                    <span class="btn-text">Sign In</span>
-                    <div class="spinner hidden"></div>
-                </button>
+                <button type="submit" class="submit-btn">Sign In to Console</button>
             </form>
+
+            <form id="register-form" class="auth-form hidden novalidate">
+                <div class="input-group">
+                    <label for="reg-name">Full Name</label>
+                    <input type="text" id="reg-name" placeholder="John Doe" autocomplete="name" required>
+                    <span class="error-msg">Name field cannot be left blank</span>
+                </div>
+
+                <div class="input-group">
+                    <label for="reg-email">Email Address</label>
+                    <input type="email" id="reg-email" placeholder="newuser@example.com" autocomplete="email" required>
+                    <span class="error-msg">Please provide a valid registration email</span>
+                </div>
+
+                <div class="input-group">
+                    <label for="reg-password">Create Password</label>
+                    <input type="password" id="reg-password" placeholder="Min. 8 characters" autocomplete="new-password" required>
+                    <span class="error-msg">Password must contain at least 8 characters</span>
+                </div>
+
+                <div class="input-group">
+                    <label for="reg-confirm">Confirm Password</label>
+                    <input type="password" id="reg-confirm" placeholder="Repeat your password" autocomplete="new-password" required>
+                    <span class="error-msg">Security mismatch: Passwords do not match</span>
+                </div>
+
+                <button type="submit" class="submit-btn register-variant">Create New Account</button>
+            </form>
+
         </div>
     </div>
     <script src="script.js"></script>
