@@ -1,0 +1,198 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --accent-blue: #38bdf8;
+    --accent-green: #4ade80;
+    --accent-red: #f87171;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: var(--bg-gradient);
+    color: var(--text-main);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 1000px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: -0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.subtitle {
+    color: var(--accent-blue);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Input Styles */
+.input-section {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(8px);
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    display: flex;
+    gap: 1rem;
+}
+
+#task-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: rgba(15, 23, 42, 0.6);
+    color: var(--text-main);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#task-input:focus {
+    border-color: var(--accent-blue);
+}
+
+#add-task-btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    background: var(--accent-blue);
+    color: #0f172a;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+#add-task-btn:hover {
+    opacity: 0.9;
+}
+
+/* Dashboard Columns Layout */
+.task-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2rem;
+}
+
+.task-column {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(8px);
+    height: fit-content;
+}
+
+.task-column h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    color: var(--accent-blue);
+}
+
+.task-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Individual Task Item Card */
+.task-item {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.task-main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.task-text {
+    font-size: 1.05rem;
+    word-break: break-word;
+    flex: 1;
+}
+
+.completed-tasks .task-text {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.timestamp {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Control Buttons */
+.action-btns {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+    transition: background 0.2s;
+}
+
+.complete-btn:hover { background: var(--accent-green); color: #0f172a; }
+.edit-btn:hover { background: var(--accent-blue); color: #0f172a; }
+.delete-btn:hover { background: var(--accent-red); color: #0f172a; }
