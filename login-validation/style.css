@@ -1,0 +1,158 @@
+:root {
+    --bg-universe: #0f172a;
+    --card-surface: #1e293b;
+    --accent-primary: #38bdf8;
+    --accent-hover: #0ea5e9;
+    --text-high: #f8fafc;
+    --text-low: #94a3b8;
+    --feedback-error: #ef4444;
+    --feedback-success: #22c55e;
+    --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-universe);
+    color: var(--text-high);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.login-wrapper {
+    width: 100%;
+    max-width: 420px;
+}
+
+.login-card {
+    background-color: var(--card-surface);
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.card-header h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.card-header p {
+    color: var(--text-low);
+    font-size: 0.9rem;
+}
+
+/* Form Structural Core elements */
+.input-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-high);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text-high);
+    font-size: 0.95rem;
+    transition: var(--transition-smooth);
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+/* Custom error injection classes */
+.input-group.invalid input {
+    border-color: var(--feedback-error);
+    background-color: rgba(239, 68, 68, 0.02);
+}
+
+.error-msg {
+    color: var(--feedback-error);
+    font-size: 0.75rem;
+    margin-top: 0.35rem;
+    display: none;
+}
+
+.input-group.invalid .error-msg {
+    display: block;
+}
+
+/* Submit Control Core configuration */
+.submit-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--accent-primary);
+    color: #0f172a;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.submit-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+/* Status Notifications Banner Layout */
+.status-banner {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    animation: slideDown 0.2s ease;
+}
+
+.status-banner.success {
+    background-color: rgba(34, 197, 94, 0.15);
+    color: var(--feedback-success);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.status-banner.error {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: var(--feedback-error);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.hidden { display: none !important; }
+
+@keyframes slideDown {
+    from { transform: translateY(-5px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
