@@ -6,11 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const registerForm = document.getElementById("register-form");
     const statusBanner = document.getElementById("status-banner");
 
-    // Email pattern tracking standard RFC compliant profiles
+    // Email pattern tracking standard format profiles
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     // View Switching Logic Engine
-    loginTab.addEventListener("click", () => {
+    loginTab.addEventListener("click", (e) => {
+        e.preventDefault();
         loginTab.classList.add("active");
         regTab.classList.remove("active");
         loginForm.classList.remove("hidden");
@@ -18,7 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
         statusBanner.className = "status-banner hidden";
     });
 
-    regTab.addEventListener("click", () => {
+    regTab.addEventListener("click", (e) => {
+        e.preventDefault();
         regTab.classList.add("active");
         loginTab.classList.remove("active");
         registerForm.classList.remove("hidden");
@@ -26,19 +28,22 @@ document.addEventListener("DOMContentLoaded", () => {
         statusBanner.className = "status-banner hidden";
     });
 
-    // Helper function handling UI field marking states
+    // Helper function handling UI field marking states safely
     function toggleFieldState(inputElement, isValid) {
-        const group = inputElement.parentElement;
-        if (isValid) {
-            group.classList.remove("invalid");
-        } else {
-            group.classList.add("invalid");
+        const group = inputElement.closest(".input-group");
+        if (group) {
+            if (isValid) {
+                group.classList.remove("invalid");
+            } else {
+                group.classList.add("invalid");
+            }
         }
         return isValid;
     }
 
-    // ================= VALIDATE LOGIN =================
+    // ================= VALIDATE SIGN IN =================
     loginForm.addEventListener("submit", (e) => {
+        // Absolute critical line stopping native page reload
         e.preventDefault();
         statusBanner.className = "status-banner hidden";
 
@@ -60,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ================= VALIDATE REGISTRATION =================
     registerForm.addEventListener("submit", (e) => {
+        // Absolute critical line stopping native page reload
         e.preventDefault();
         statusBanner.className = "status-banner hidden";
 
