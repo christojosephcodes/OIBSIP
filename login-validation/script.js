@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const registerForm = document.getElementById("register-form");
     const statusBanner = document.getElementById("status-banner");
 
-    // Email pattern tracking standard format profiles
+    // Email pattern tracking standard RFC compliant profiles
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     // View Switching Logic Engine
