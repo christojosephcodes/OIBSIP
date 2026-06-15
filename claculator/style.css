@@ -1,0 +1,129 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    --calc-bg: rgba(30, 41, 59, 0.75);
+    --screen-bg: rgba(15, 23, 42, 0.8);
+    --accent-blue: #38bdf8;
+    --accent-orange: #fb923c;
+    --text-main: #f8fafc;
+    --text-muted: #64748b;
+    --btn-bg: rgba(255, 255, 255, 0.05);
+    --btn-hover: rgba(255, 255, 255, 0.15);
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.calculator-container {
+    width: 100%;
+    max-width: 380px;
+    background: var(--calc-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 1.5rem;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.brand {
+    font-size: 0.75rem;
+    color: var(--accent-blue);
+    letter-spacing: 0.15em;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Screen Area */
+.screen {
+    background: var(--screen-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    min-height: 100px;
+    word-break: break-all;
+}
+
+.previous-display {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    min-height: 1.5rem;
+}
+
+.current-display {
+    color: var(--text-main);
+    font-size: 2.25rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* Keypad Grid Configuration */
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+}
+
+.btn {
+    border: none;
+    background: var(--btn-bg);
+    color: var(--text-main);
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 1.25rem 0;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
+}
+
+.btn:hover {
+    background: var(--btn-hover);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Specialized Buttons styling */
+.action-btn {
+    color: #f87171;
+}
+
+.operator-btn {
+    color: var(--accent-blue);
+}
+
+.zero-btn {
+    grid-column: span 2;
+}
+
+.equals-btn {
+    background: var(--accent-orange);
+    color: #0f172a;
+}
+
+.equals-btn:hover {
+    background: #f97316;
+    opacity: 0.95;
+}
